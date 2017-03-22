@@ -1,0 +1,25 @@
+{
+  "name": "adflybot",
+  "version": "0.0.1",
+  "description": "simple bot to click adfly buttons",
+  "main": "index.js",
+  "scripts": {
+    "setup": "node setup.js",
+    "postinstall": "node nightwatch.conf.js",
+    "test": "./node_modules/.bin/nightwatch --env local",
+    "ie": "./node_modules/.bin/nightwatch -e ie11",
+    "sauce": "./node_modules/.bin/nightwatch -e chrome,ie11,android_s4_emulator,iphone_6_simulator",
+    "upload": "node test/e2e/upload_screenshots_to_s3.js",
+    "e2e": "npm run sauce; npm run upload",
+    "dev": "./node_modules/.bin/nodemon -w test/index.html --delay 250ms --exec 'npm run upload'"
+  },
+  "author": "Diego Tonini",
+  "license": "ISC",
+  "dependencies": {
+    "nightwatch": "^0.9.13",
+    "nodemon": "^1.11.0",
+    "public-ip": "^2.3.3",
+    "shelljs": "^0.7.7",
+    "tor-control": "0.0.1"
+  }
+}
