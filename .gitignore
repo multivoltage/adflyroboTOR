@@ -41,3 +41,6 @@ tor-browser-linux*
 
 # tor folder for exctract
 tor-browser_en-US
+
+# my-torrc config file
+tor_conf/my-torrc

@@ -28,8 +28,6 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "enabled": true, // save screenshots to this directory (excluded by .gitignore)
         "path": SCREENSHOT_PATH
       },
-      "username" : "${SAUCE_USERNAME}",     // if you want to use Saucelabs remember to
-      "access_key" : "${SAUCE_ACCESS_KEY}", // export your environment variables (see readme)
       "globals": {
         "waitForConditionTimeout": 10000    // wait for content on the page before continuing
       }
@@ -59,65 +57,11 @@ const config = { // we use a nightwatch.conf.js file so we can include comments 
         "acceptSslCerts": true
       }
     },
-    "phantomjs": {
-        "desiredCapabilities": {
-            "browserName"          : "phantomjs",
-            "javascriptEnabled"    : true,
-            "acceptSslCerts"       : true,
-            "phantomjs.binary.path": "bin/phantomjs",
-            "phantomjs.cli.args"   : []
-        }
-    },
     "chrome": { // your local Chrome browser (chromedriver)
       "desiredCapabilities": {
         "browserName": "chrome",
         "javascriptEnabled": true,
         "acceptSslCerts": true
-      }
-    },
-    "chromemac": { // browsers used on saucelabs:
-      "desiredCapabilities": {
-        "browserName": "chrome",
-        "platform": "OS X 10.11",
-        "version": "47"
-      }
-    },
-    "ie11": {
-      "desiredCapabilities": {
-        "browserName": "internet explorer",
-        "platform": "Windows 10",
-        "version": "11.0"
-      }
-    },
-    "firefox" : {
-      "desiredCapabilities": {
-        "platform": "XP",
-        "browserName": "firefox",
-        "version": "33"
-      }
-    },
-    "internet_explorer_10" : {
-      "desiredCapabilities": {
-        "platform": "Windows 7",
-        "browserName": "internet explorer",
-        "version": "10"
-      }
-    },
-    "android_s4_emulator": {
-      "desiredCapabilities": {
-        "browserName": "android",
-        "deviceOrientation": "portrait",
-        "deviceName": "Samsung Galaxy S4 Emulator",
-        "version": "4.4"
-      }
-    },
-    "iphone_6_simulator": {
-      "desiredCapabilities": {
-        "browserName": "iPhone",
-        "deviceOrientation": "portrait",
-        "deviceName": "iPhone 6",
-        "platform": "OSX 10.10",
-        "version": "8.4"
       }
     }
   }

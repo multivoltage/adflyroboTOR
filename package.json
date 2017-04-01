@@ -6,11 +6,7 @@
   "scripts": {
     "setup": "node setup.js",
     "postinstall": "node nightwatch.conf.js",
-    "test": "./node_modules/.bin/nightwatch --env local",
-    "ie": "./node_modules/.bin/nightwatch -e ie11",
-    "sauce": "./node_modules/.bin/nightwatch -e chrome,ie11,android_s4_emulator,iphone_6_simulator",
-    "upload": "node test/e2e/upload_screenshots_to_s3.js",
-    "e2e": "npm run sauce; npm run upload",
+    "start": "./node_modules/.bin/nightwatch --env local",
     "dev": "./node_modules/.bin/nodemon -w test/index.html --delay 250ms --exec 'npm run upload'"
   },
   "author": "Diego Tonini",
@@ -20,6 +16,7 @@
     "nodemon": "^1.11.0",
     "public-ip": "^2.3.3",
     "shelljs": "^0.7.7",
-    "tor-control": "0.0.1"
+    "tor-control": "0.0.1",
+    "selenium-download": "2.0.9"
   }
 }

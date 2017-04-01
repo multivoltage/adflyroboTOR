@@ -1,22 +1,25 @@
 var conf = require('../../nightwatch.conf.js');
-const publicIp = require('public-ip');
+var adfly_url = 'http://bluenik.com/14E';
+var shell = require('shelljs');
 
 module.exports = {
   'click skyp ads': function (browser) {
 
-    for(var i=0;i<3;i++){
-      publicIp.v4().then(ip => {
-        console.log('using ip: '+ip);
-        //=> '46.5.21.123'
-      });
+    for(var i=0;i<2;i++){
+
 
       browser
-        .url('https://check.torproject.org/')   // visit the url
-        //.waitForElementVisible('#skip_ad_button',function(){
-        //  console.log('skip is visible');
-        //})
-        //.click('#skip_ad_button');
-        .pause(13*1000)
+        .url(adfly_url)   // visit the url
+        .waitForElementVisible('#skip_ad_button',20*1000)
+        .click('#skip_ad_button',function(response){
+          // we have clicked
+
+        })
+        .pause(5*1000); // some delay ater click
+
+        var command = shell.exec('./sh/signal_change_ip_single.sh');
+        console.log(command);
+
     }
 
     browser.end();

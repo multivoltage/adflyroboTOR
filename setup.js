@@ -1,8 +1,8 @@
 var shell = require('shelljs');
+var fs = require('fs');
 
 const TOR_BROWSER_WGET_URL = 'https://www.torproject.org/dist/torbrowser/6.5.1/tor-browser-linux64-6.5.1_en-US.tar.xz';
 const filename_tor_browser = 'tor-browser-linux64-6.5.1_en-US.tar.xz';
-const my_torrc_file = './tor_conf/my-torrc';
 
 function init(){
   if(!isAllToolsAvailable())
@@ -13,6 +13,8 @@ function init(){
 
   if(!isTorCorrectlyExtracted())
     return;
+
+
 
 }
 
@@ -58,6 +60,22 @@ function isTorCorrectlyExtracted(path){
     shell.exit(1);
     return false;
   }
+  console.log('Deleting file...');
+  fs.unlink(filename_tor_browser,function(){
+    console.log('correctly deleted file');
+    return true;
+  });
+}
+
+function givePermissionForShScript(){
+  console.log('try to give permission to sh/*.sh scripts');
+  if (shell.exec('chmod 755 ./sh/*.sh').code !== 0) {
+    console.log('cannot execute chmod 755 '+filename_tor_browser);
+    shell.exit(1);
+    return false;
+  }
   return true;
 }
-init();
+
+givePermissionForShScript();
+//init();
