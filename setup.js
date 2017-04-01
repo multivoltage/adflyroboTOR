@@ -77,5 +77,5 @@ function givePermissionForShScript(){
   return true;
 }
 
-givePermissionForShScript();
+init();
 //init();
