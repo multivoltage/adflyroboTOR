@@ -6,7 +6,7 @@
   "scripts": {
     "setup": "node setup.js",
     "postinstall": "node nightwatch.conf.js",
-    "start": "./node_modules/.bin/nightwatch --env local",
+    "start": "node run.js",
     "dev": "./node_modules/.bin/nodemon -w test/index.html --delay 250ms --exec 'npm run upload'"
   },
   "author": "Diego Tonini",
