@@ -31,7 +31,8 @@ function startBot(){
       if(data.match('Bootstrapped 100%: Done')){
         // we are connected :)
         // start tedt
-        shell.exec('npm start');
+        //shell.exec('npm start');
+        console.log('you can npw run test :)');
       }
     });
 }

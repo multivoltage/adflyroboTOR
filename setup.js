@@ -1,8 +1,9 @@
 var shell = require('shelljs');
 var fs = require('fs');
 
-const TOR_BROWSER_WGET_URL = 'https://www.torproject.org/dist/torbrowser/6.5.1/tor-browser-linux64-6.5.1_en-US.tar.xz';
-const filename_tor_browser = 'tor-browser-linux64-6.5.1_en-US.tar.xz';
+const VERSION = '7.0.8';
+const TOR_BROWSER_WGET_URL = 'https://www.torproject.org/dist/torbrowser/'+VERSION+'/tor-browser-linux64-'+VERSION+'_en-US.tar.xz';
+const filename_tor_browser = 'tor-browser-linux64-'+VERSION+'_en-US.tar.xz';
 
 function init(){
   if(!isAllToolsAvailable())
@@ -13,8 +14,6 @@ function init(){
 
   if(!isTorCorrectlyExtracted())
     return;
-
-
 
 }
 
@@ -78,4 +77,3 @@ function givePermissionForShScript(){
 }
 
 init();
-//init();

@@ -7,16 +7,18 @@
     "setup": "node setup.js",
     "postinstall": "node nightwatch.conf.js",
     "start": "node run.js",
-    "dev": "./node_modules/.bin/nodemon -w test/index.html --delay 250ms --exec 'npm run upload'"
+    "dev": "./node_modules/.bin/nodemon -w test/index.html --delay 250ms --exec 'npm run upload'",
+    "check-ip": "./node_modules/nightwatch/bin/nightwatch --env default --test test/e2e/check-ip.js"
   },
   "author": "Diego Tonini",
   "license": "ISC",
   "dependencies": {
+    "chromedriver": "^2.33.2",
     "nightwatch": "^0.9.13",
     "nodemon": "^1.11.0",
     "public-ip": "^2.3.3",
+    "selenium-download": "2.0.9",
     "shelljs": "^0.7.7",
-    "tor-control": "0.0.1",
-    "selenium-download": "2.0.9"
+    "tor-control": "0.0.1"
   }
 }
