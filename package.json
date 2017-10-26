@@ -8,7 +8,8 @@
     "postinstall": "node nightwatch.conf.js",
     "start": "node run.js",
     "dev": "./node_modules/.bin/nodemon -w test/index.html --delay 250ms --exec 'npm run upload'",
-    "check-ip": "./node_modules/nightwatch/bin/nightwatch --env default --test test/e2e/check-ip.js"
+    "check-ip": "./node_modules/nightwatch/bin/nightwatch --env default --test test/e2e/check-ip.js",
+    "skip-adfly": "./node_modules/nightwatch/bin/nightwatch --env default --test test/e2e/skipads.js"
   },
   "author": "Diego Tonini",
   "license": "ISC",

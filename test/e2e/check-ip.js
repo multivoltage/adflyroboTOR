@@ -5,7 +5,7 @@ const SITE = 'https://www.iplocation.net/find-ip-address';
 module.exports = {
   'click skyp ads': function (browser) {
 
-    for(var i=0;i<2;i++){
+    for(var i=0;i<100;i++){
 
       browser
         .url(SITE)   // visit the url

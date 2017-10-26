@@ -5,13 +5,13 @@ var shell = require('shelljs');
 module.exports = {
   'click skyp ads': function (browser) {
 
-    for(var i=0;i<2;i++){
+    for(var i=0;i<20;i++){
 
 
       browser
         .url(adfly_url)   // visit the url
-        .waitForElementVisible('#skip_ad_button',20*1000)
-        .click('#skip_ad_button',function(response){
+        .waitForElementVisible('.mwButton',20*1000)
+        .click('.mwButton',function(response){
           // we have clicked
 
         })
